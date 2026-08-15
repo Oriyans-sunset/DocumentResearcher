@@ -2,7 +2,7 @@
 
 A production-shaped **Retrieval-Augmented Generation** pipeline that ingests PDFs, embeds them into a vector store, and answers questions grounded in that content — orchestrated as **durable, event-driven workflows** instead of fragile synchronous scripts.
 
-## Why this is interesting
+## Key Details
 
 - **Durable execution with [Inngest](https://www.inngest.com/)** — ingestion and Q&A aren't plain function calls, they're event-triggered functions (`rag/ingest_pdf`, `rag/query_pdf_ai`) built from independently retryable steps (`context.step.run`). Each step is checkpointed, so a transient failure in embedding or upsert reruns just that step, not the whole pipeline.
 - **AI inference as a first-class workflow step** — the answer-generation call goes through `context.step.ai.infer(...)`, letting Inngest treat the Gemini call itself as a durable, observable, retryable step in the run graph rather than an opaque network call.
