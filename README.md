@@ -1,4 +1,4 @@
-# RAG Production App
+# DocumentResearcher
 
 A production-shaped **Retrieval-Augmented Generation** pipeline that ingests PDFs, embeds them into a vector store, and answers questions grounded in that content — orchestrated as **durable, event-driven workflows** instead of fragile synchronous scripts.
 
