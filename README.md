@@ -43,4 +43,4 @@ uv run uvicorn ragproductionapp.main:app --reload   # FastAPI + Inngest function
 uv run streamlit run src/ragproductionapp/streamlist_app.py   # UI
 ```
 
-Requires a Qdrant instance (e.g. `docker run -p 6333:6333 qdrant/qdrant`), an Inngest dev server, and a `GEMINI_API_KEY` in your environment.
+Requires a Qdrant instance (e.g. `docker run -p 6333:6333 -v $(pwd)/qdrant_storage:/qdrant/storage qdrant/qdrant`), an Inngest dev server, and a `GEMINI_API_KEY` in your environment.
