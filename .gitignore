@@ -11,3 +11,9 @@ wheels/
 
 # env file
 .env
+
+# Vector DB data (local Qdrant storage, regenerated from your documents)
+qdrant_storage/
+
+# User-uploaded documents
+uploads/
