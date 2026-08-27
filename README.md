@@ -32,8 +32,26 @@ Streamlit UI  ──event──▶  Inngest  ──▶  FastAPI-hosted functions
 | Vector store | Qdrant |
 | PDF parsing / chunking | LlamaIndex (`PDFReader`, `SentenceSplitter`) |
 | Data contracts | Pydantic |
+| Containerization | Docker Compose (Qdrant, API, Inngest dev server, Streamlit UI) |
 
 ## Running it
+
+### Option A — Docker Compose (recommended)
+
+The whole stack — Qdrant, the FastAPI/Inngest API, the Inngest dev server, and the Streamlit UI — is containerized. The `api` and `ui` services build from the same `Dockerfile` and just run different commands.
+
+```bash
+# create a .env with GEMINI_API_KEY (and any other required vars)
+docker compose up --build
+```
+
+- API: `http://localhost:8000`
+- Inngest dev server UI: `http://localhost:8288`
+- Streamlit UI: `http://localhost:8501`
+
+Services start in dependency order via healthchecks (`qdrant` → `api` → `inngest`/`ui`). Qdrant data persists to `./qdrant_storage` (bind mount); uploaded PDFs persist to a shared `uploads` named volume used by both `api` and `ui`.
+
+### Option B — Run locally without Docker
 
 ```bash
 uv sync
