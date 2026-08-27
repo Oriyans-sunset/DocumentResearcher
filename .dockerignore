@@ -1,0 +1,10 @@
+.venv/
+qdrant_storage/
+uploads/
+.idea/
+.git/
+.gitignore
+__pycache__/
+**/__pycache__/
+*.pyc
+.env
