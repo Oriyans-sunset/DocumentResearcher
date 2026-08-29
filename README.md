@@ -10,16 +10,10 @@ A **Retrieval-Augmented Generation** pipeline that ingests PDFs, embeds them int
 - **Vector search with QdrantDB** — [Qdrant](https://qdrant.tech/) backs retrieval with cosine similarity over 3072-dim `gemini-embedding-001` vectors, with UUIDv5 IDs so re-ingesting a source is idempotent.
 
 ## Architecture
+<img width="6908" height="1156" alt="image" src="https://github.com/user-attachments/assets/f5b003da-6921-42a8-9470-30fa9b973f57" />
 
-```
-Streamlit UI  ──event──▶  Inngest  ──▶  FastAPI-hosted functions
-                                         │
-                     ┌───────────────────┼────────────────────┐
-                     ▼                                        ▼
-          rag/ingest_pdf                              rag/query_pdf_ai
- load PDF → chunk → embed → upsert     embed question → search Qdrant  → step.ai.infer → answer
- (LlamaIndex)      (Gemini) (Qdrant)                                        (Gemini)
-```
+(tip - check out draw.io if you want to make these diagrams like the one above)
+
 
 ## Tech stack
 
