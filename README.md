@@ -12,7 +12,7 @@ A **Retrieval-Augmented Generation** pipeline that ingests PDFs, embeds them int
 ## Architecture
 <img width="6908" height="1156" alt="image" src="https://github.com/user-attachments/assets/f5b003da-6921-42a8-9470-30fa9b973f57" />
 
-(tip - check out draw.io if you want to make these diagrams like the one above)
+(p.s. - diagrams made with draw.io)
 
 
 ## Tech stack
