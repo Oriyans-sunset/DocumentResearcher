@@ -20,6 +20,7 @@ services:
       - .env
     environment:
       QDRANT_URL: http://qdrant:6333
+      INNGEST_DEV: "1"
       INNGEST_BASE_URL: http://inngest:8288
       INNGEST_SERVE_ORIGIN: http://api:8000
     volumes:
@@ -50,6 +51,7 @@ services:
     env_file:
       - .env
     environment:
+      INNGEST_DEV: "1"
       INNGEST_BASE_URL: http://inngest:8288
       INNGEST_API_BASE: http://inngest:8288/v1
     volumes:
