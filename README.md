@@ -25,8 +25,9 @@ A **Retrieval-Augmented Generation** pipeline that ingests PDFs, embeds them int
 | Embeddings & LLM | Google Gemini (`gemini-embedding-002`, `gemini-2.5-flash-lite`) |
 | Vector store | Qdrant |
 | PDF parsing / chunking | LlamaIndex (`PDFReader`, `SentenceSplitter`) |
-| Data contracts | Pydantic |
+| Data models | Pydantic |
 | Containerization | Docker Compose (Qdrant, API, Inngest dev server, Streamlit UI) |
+| Deployment | ECS Fargate, ECR, S3 |
 
 ## Running it
 
